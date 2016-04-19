@@ -33,6 +33,9 @@ namespace HelloXamarin
             arvauksenTulosLabel = new Label();
             arvauksenTulosLabel.Text = "";
 
+            // esimerkki XAML-sivun käytöstä
+            //MainPage = new EkaXamlSivu();
+
             // The root page of your application
             MainPage = new ContentPage
             {
