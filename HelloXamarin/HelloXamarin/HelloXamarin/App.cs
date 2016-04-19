@@ -20,7 +20,8 @@ namespace HelloXamarin
                     Children = {
                         new Label {
                             XAlign = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
+                            Text = "Heissan Xamarin!",
+                            TextColor = Color.Yellow
                         }
                     }
                 }
