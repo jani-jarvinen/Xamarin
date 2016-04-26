@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 
 using Xamarin.Forms;
@@ -13,11 +14,13 @@ namespace HelloXamarin
         private Label arvauksenTulosLabel;
 
         private int oikeaLuku;
+        private int arvaustenLukumäärä;
 
         public App()
         {
             Random rnd = new Random();
             oikeaLuku = rnd.Next(1, 21);
+            arvaustenLukumäärä = 0;
 
             // painonapin alustus
             Button arvaaNappi = new Button();
@@ -61,22 +64,30 @@ namespace HelloXamarin
             };
         }
 
-        private void ArvaaNappi_Clicked(object sender, EventArgs e)
+        private async void ArvaaNappi_Clicked(object sender, EventArgs e)
         {
             int arvaus = int.Parse(syötekenttä.Text);
             if (arvaus < oikeaLuku)
             {
                 arvauksenTulosLabel.Text = "Luku on suurempi.";
+                arvaustenLukumäärä++;
             }
             else if (arvaus > oikeaLuku)
             {
                 arvauksenTulosLabel.Text = "Luku on pienempi.";
+                arvaustenLukumäärä++;
             }
             else if (arvaus == oikeaLuku)
             {
                 arvauksenTulosLabel.Text = "Jee! Täsmälleen oikein!";
                 Random rnd = new Random();
                 oikeaLuku = rnd.Next(1, 21);
+
+                //HttpClient webClient = new HttpClient();
+                //string url = "http://localhost:2440/home/TallennaEnnatys/" + arvaustenLukumäärä;
+                //string jsonVastaus = await webClient.GetStringAsync(url);
+
+                arvaustenLukumäärä = 0;
             }
         }
 
