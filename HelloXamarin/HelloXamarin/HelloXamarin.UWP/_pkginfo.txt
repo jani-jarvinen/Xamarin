@@ -1,0 +1,1 @@
+C:\Users\oppiadmin\Source\Repos\Xamarin\HelloXamarin\HelloXamarin\HelloXamarin.UWP\AppPackages\HelloXamarin.UWP_1.1.2.0\HelloXamarin.UWP_1.1.2.0_x86_x64_arm.appxbundle
